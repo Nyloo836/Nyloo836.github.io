@@ -1,6 +1,6 @@
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'publications', 'awards', 'others']   // ✅ 修复缺少 ]
+const section_names = ['home', 'publications', 'awards', 'others']
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -52,21 +52,32 @@ window.addEventListener('DOMContentLoaded', event => {
                 }
             })
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log("⚠️ Failed to load config.yml", error));
 
     // Load markdown sections
     marked.use({ mangle: false, headerIds: false })
-    section_names.forEach((name, idx) => {
-        fetch(content_dir + name + '.md')
-            .then(response => response.text())
+    section_names.forEach((name) => {
+        const path = content_dir + name + '.md';
+        fetch(path)
+            .then(response => {
+                console.log("Fetching:", path, response.status);
+                if (!response.ok) {
+                    throw new Error("Failed to load " + path + " (" + response.status + ")");
+                }
+                return response.text();
+            })
             .then(markdown => {
                 const html = marked.parse(markdown);
                 document.getElementById(name + '-md').innerHTML = html;
-            }).then(() => {
-                // MathJax render
                 MathJax.typeset();
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                console.error("Error loading section:", name, error);
+                const target = document.getElementById(name + '-md');
+                if (target) {
+                    target.innerHTML = `<p style="color:red;">⚠️ Failed to load ${path}</p>`;
+                }
+            });
     });
 
 });
