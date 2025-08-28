@@ -1,9 +1,6 @@
-
-
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'publications', 'awards', 'others'
-
+const section_names = ['home', 'publications', 'awards', 'others']   // ✅ 修复缺少 ]
 
 window.addEventListener('DOMContentLoaded', event => {
 
@@ -29,25 +26,35 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
-
-    // Yaml
+    // Load config.yml
     fetch(content_dir + config_file)
         .then(response => response.text())
         .then(text => {
             const yml = jsyaml.load(text);
             Object.keys(yml).forEach(key => {
                 try {
-                    document.getElementById(key).innerHTML = yml[key];
+                    if (key === "social_links") {
+                        const container = document.getElementById("social_links");
+                        if (container) {
+                            let html = "";
+                            yml.social_links.forEach(link => {
+                                html += `<a href="${link.url}" target="_blank" class="me-3">
+                                    <i class="${link.icon}"></i> ${link.label}
+                                </a>`;
+                            });
+                            container.innerHTML = html;
+                        }
+                    } else {
+                        document.getElementById(key).innerHTML = yml[key];
+                    }
                 } catch {
                     console.log("Unknown id and value: " + key + "," + yml[key].toString())
                 }
-
             })
         })
         .catch(error => console.log(error));
 
-
-    // Marked
+    // Load markdown sections
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
         fetch(content_dir + name + '.md')
@@ -56,10 +63,10 @@ window.addEventListener('DOMContentLoaded', event => {
                 const html = marked.parse(markdown);
                 document.getElementById(name + '-md').innerHTML = html;
             }).then(() => {
-                // MathJax
+                // MathJax render
                 MathJax.typeset();
             })
             .catch(error => console.log(error));
-    })
+    });
 
-}); 
+});
