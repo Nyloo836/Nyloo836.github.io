@@ -1,16 +1,11 @@
 #### Submitted
 
-- <strong>S.L.</strong>, X.Y.*, A.C.*, K.F., Y.L., C.W., and Q.N.  
-  LaNCoR: Label Noise-Contrastive Robust Learning for Seismic Signal Processing with Application to Microseismic Arrival Time Picking.  
-  <strong>Rej :)</strong> [[Code]](https://github.com/senli1073/LaNCor)  
-  <img src="img/pub1.png" alt="LaNCoR" width="400">
-
-#### Published
-
 - X.Y., <strong>S.L.</strong>, A.C.*, C.W.*, Y.L., X.B., and Q.N. (2024).  
   Deep Transfer Learning for P-wave Arrival Identification and Automatic Seismic Source Location in Underground Mines.  
   <strong>International Journal of Rock Mechanics and Mining Sciences</strong>. [[Paper]](https://doi.org/10.1016/j.ijrmms.2024.105888)  
   <img src="img/pub2.png" alt="P-wave Arrival" width="400">
+
+#### Published
 
 - <strong>S.L.</strong>, X.Y.*, A.C.*, C.W., Y.L., Y.L., and Q.N. (2024).  
   SeisT: A Foundational Deep-Learning Model for Earthquake Monitoring Tasks.  
