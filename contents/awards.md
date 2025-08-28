@@ -1,16 +1,18 @@
 
-- Outstanding Graduate Award (CUMT), 2025.
+- **2021.12**  
+  Second Prize, Jianxing College Learning Scholarship, University-level, Participant
 
-- National Scholarship for Graduate Student, 2024.
+- **2022.06**  
+  Second Prize, Excellent Student Scholarship, University-level, Recipient
 
-- First-Prize Scholarship (CUMT), 2024.
+- **2023.01**  
+  Second Prize (National), China Robot Competition – Robot Advanced Vision Competition – 3D Recognition Project, National-level, Team Member
 
-- First-Prize Scholarship (CUMT), 2023.
+- **2022.11**  
+  First Prize, China University Big Data Challenge, National-level, Team Member
 
-- Freshman Scholarship (CUMT), 2022.
+- **2022.05**  
+  Second Prize, University Mathematical Modeling Competition, University-level, Team Member
 
-- Outstanding Graduation Project Award (Jiangsu Province), 2022.
-
-- First-Prize Enterprise Scholarship (CUMT), 2020.
-
-- First-Prize Scholarship (CUMT), 2019.
+- **2020.11**  
+  Second Prize, Mechanical Engineering College “Chuying Cup” Chinese Speech Contest, College-level, Participant
